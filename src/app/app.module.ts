@@ -10,6 +10,7 @@ import { LibreriaAboutComponent } from './libreria-about/libreria-about.componen
 import { BookListComponent } from './book-list/book-list.component';
 import { BookAddComponent } from './book-add/book-add.component';
 import { BookCartBuyComponent } from './book-cart-buy/book-cart-buy.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BookCartBuyComponent } from './book-cart-buy/book-cart-buy.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@
             <th>Editorial</th>
             <th>Disponible</th>
             <th>Precio</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -18,8 +19,15 @@
             <td>{{book.autor}}</td>
             <td>{{book.tema}}</td>
             <td>{{book.editorial}}</td>
-            <td><span class="badge text-bg-warning" *ngIf="book.disponibles == 0">Sin Stock</span></td>
+            <td>
+                <span class="badge text-bg-warning" *ngIf="book.disponibles == 0">Agotado!</span>
+                <span *ngIf="book.disponibles != 0">{{book.disponibles}}</span>
+            </td>
             <td>{{book.precio| currency}}</td>
+            <td>
+                <input type="image" id="remove" src="/assets/trash3.svg" width="25" height="25">
+                <input type="image" id="edite" src="/assets/pencil-square.svg" width="25" height="25">
+            </td>
         </tr>
     </tbody>
 </table>
