@@ -20,13 +20,13 @@
             <td>{{book.tema}}</td>
             <td>{{book.editorial}}</td>
             <td>
-                <span class="badge text-bg-warning" *ngIf="book.disponibles == 0">Agotado!</span>
-                <span *ngIf="book.disponibles != 0">{{book.disponibles}}</span>
+                <span class="badge text-bg-warning" *ngIf="book.stock == 0">Agotado!</span>
+                <span *ngIf="book.stock != 0">{{book.stock}}</span>
             </td>
             <td>{{book.precio| currency}}</td>
             <td>
-                <input type="image" id="remove" src="/assets/trash3.svg" width="25" height="25">
-                <input type="image" id="edite" src="/assets/pencil-square.svg" width="25" height="25">
+                <input type="image" src="/assets/trash3.svg" width="25" height="25" (click)="remove(book)">
+                <input type="image" src="/assets/pencil-square.svg" width="25" height="25">
             </td>
         </tr>
     </tbody>

@@ -16,7 +16,17 @@ export class BookListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.initTable();
+  }
+
+  initTable(){
     this.booksDataService.getAll().subscribe(books => this.books = books);
   }
 
+  remove(book: Book){
+    this.booksDataService.removeBook(book).subscribe(book =>{
+      console.log(book.id)
+      this.initTable();
+    })
+  }
 }

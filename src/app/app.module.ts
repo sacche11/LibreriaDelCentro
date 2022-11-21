@@ -11,6 +11,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookAddComponent } from './book-add/book-add.component';
 import { BookCartBuyComponent } from './book-cart-buy/book-cart-buy.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
