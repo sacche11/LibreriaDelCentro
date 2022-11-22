@@ -9,7 +9,8 @@
             <th>Editorial</th>
             <th>Disponible</th>
             <th>Precio</th>
-            <th>Acciones</th>
+            <th>Cantidad</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
@@ -25,8 +26,10 @@
             </td>
             <td>{{book.precio| currency}}</td>
             <td>
-                <input type="image" src="/assets/trash3.svg" width="25" height="25" (click)="remove(book)">
-                <input type="image" src="/assets/pencil-square.svg" width="25" height="25">
+                <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)"></app-input-integer>
+            </td>    
+            <td>    
+                <button class="btn btn-primary" (click)="add(book)">Comprar</button>
             </td>
         </tr>
     </tbody>

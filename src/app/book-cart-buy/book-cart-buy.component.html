@@ -1,1 +1,6 @@
-<p>book-cart-buy works!</p>
+<h3>Carrito de compras:</h3>
+<ul>
+    <li *ngFor="let book of cartList$ | async">
+        {{book.titulo}}: {{book.quantity}}
+    </li>
+</ul>

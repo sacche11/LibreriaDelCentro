@@ -8,10 +8,10 @@ import { LibreriaStockComponent } from './libreria-stock/libreria-stock.componen
 import { LibreriaBuyCartComponent } from './libreria-buy-cart/libreria-buy-cart.component';
 import { LibreriaAboutComponent } from './libreria-about/libreria-about.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { BookAddComponent } from './book-add/book-add.component';
 import { BookCartBuyComponent } from './book-cart-buy/book-cart-buy.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import { FormsModule } from '@angular/forms';
     LibreriaBuyCartComponent,
     LibreriaAboutComponent,
     BookListComponent,
-    BookAddComponent,
-    BookCartBuyComponent
+    BookCartBuyComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

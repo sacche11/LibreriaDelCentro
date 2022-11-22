@@ -26,4 +26,9 @@ export class BookDataService {
   public removeBook(book:Book): Observable<Book>{
     return this.http.delete<Book>(URL+'/'+book.id);
   }
+
+  //edito un libro
+  /*public editBook(book: Book):Observable<Book>{
+    return this.http.put<Book>(URL,book);
+  }*/
 }
