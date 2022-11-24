@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Book } from './book-list/Book';
 
 const URL = 'https://62bc99daeff39ad5ee2898e9.mockapi.io/api/libros';
@@ -16,7 +16,18 @@ export class BookDataService {
   public getAll(): Observable<Book[]>{
     return this.http.get<Book[]>(URL);
   }
-  
+
+  //obtengo los libros para el carrito de compras, con modificaciones
+  public getAllToCart(): Observable<Book[]>{
+
+    //pipe: nos permite hacer cosas en medio antes de entregar los datos
+    return this.http.get<Book[]>(URL).pipe(
+
+      tap( (books: Book[]) => books.forEach(book => book.quantity = 0))
+      //tap: toca lo que viene antes de emitirlo, osea podemos hacerle algo (transformar)
+    );
+  }
+
   //agrego un libro nuevo
   public addBook(book: Book): Observable<Book> {
     return this.http.post<Book>(URL, book);
@@ -29,6 +40,6 @@ export class BookDataService {
 
   //edito un libro
   /*public editBook(book: Book):Observable<Book>{
-    return this.http.put<Book>(URL,book);
+      return this.http.put<Book>(URL,book);
   }*/
 }

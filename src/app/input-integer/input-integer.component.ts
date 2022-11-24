@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+//import { Book } from '../book-list/Book';
 
 @Component({
   selector: 'app-input-integer',
@@ -10,7 +11,7 @@ export class InputIntegerComponent implements OnInit {
   constructor() { }
 
   @Input()
-  quantity: any;
+  quantity: any; //Book;
 
   @Input()
   max: any;

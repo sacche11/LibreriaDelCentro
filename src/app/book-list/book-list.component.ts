@@ -22,7 +22,7 @@ export class BookListComponent implements OnInit {
   }
 
   initTable(){
-    this.booksDataService.getAll().subscribe(books => this.books = books);
+    this.booksDataService.getAllToCart().subscribe(books => this.books = books);
   }
 
   add(book:Book): void{
